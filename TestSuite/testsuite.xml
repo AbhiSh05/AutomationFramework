@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestAll">
+    <parameter name="browser" value="chrome"></parameter>
+    <test name="Google">
+        <classes>
+            <class name="TestClasses.TC_testClass">
+                <methods>
+                    <include name="First_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
