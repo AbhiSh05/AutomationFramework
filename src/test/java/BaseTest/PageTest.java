@@ -1,6 +1,7 @@
 package BaseTest;
 
 import Utils.CONSTANTS;
+import Utils.CreatingEmailTemplate;
 import Utils.ExcelUtils;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -26,6 +27,7 @@ public class PageTest {
     public static Date startDate;
     public static Date endDate;
     public static String ExtentReportPath;
+    public static String CurrentTestinExecution;
 
 
 
@@ -72,6 +74,7 @@ public class PageTest {
     @BeforeMethod
     @Parameters({"browser"})
     protected synchronized void beforeMethod(Method method,String broswer) throws Exception {
+        PageTest.CurrentTestinExecution=method.getName();
         KillDriver();
         System.out.println("Starting Test");
         System.out.println("============"+method.getName()+"==================");
@@ -108,6 +111,8 @@ public class PageTest {
         //Flushing out Report and creating Extent Reports
         createReport();
         endDate= new Date();
+        KillDriver();
+        new CreatingEmailTemplate().createEmailTemplate();
     }
 
     public void createReport() throws Exception {

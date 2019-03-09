@@ -8,6 +8,8 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class ExcelUtils {
 
@@ -37,7 +39,16 @@ public class ExcelUtils {
         fos.close();
     }
 
-
+    public static Map<String,String> GetResults() throws Exception {
+        Map<String,String> map = new LinkedHashMap<>();
+        FileInputStream fis= new FileInputStream(new File(CONSTANTS.TestSummaryFile));
+        HSSFWorkbook workbook= new HSSFWorkbook(fis);
+        Sheet sheet = workbook.getSheet("Result");
+        for (int i=1;i<sheet.getLastRowNum()+1;i++) {
+            map.put(sheet.getRow(i).getCell(0).toString(),sheet.getRow(i).getCell(1).toString());
+        }
+        return map;
+    }
 
 
 
