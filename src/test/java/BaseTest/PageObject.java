@@ -3,10 +3,9 @@ package BaseTest;
 import Utils.CONSTANTS;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+import org.apache.commons.io.FileUtils;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,7 +13,11 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.io.File;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -41,6 +44,7 @@ public class PageObject {
        driver.get(URL);
        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
        driver.manage().window().maximize();
+       logger.log(LogStatus.PASS,"URL is open "+URL);
    }
 
    public void waitforPageLoad() {
@@ -333,6 +337,30 @@ public class PageObject {
            Assert.fail("Exception in get Attribute Value");
        }
        return value;
+   }
+
+   public String getScreenshot() throws Exception {
+       String combined="";
+       try {
+           System.out.println(PageTest.CurrentTestinExecution);
+           SimpleDateFormat sdf= new SimpleDateFormat("yyyy_MM_dd_hh_mm_ss");
+           String timestamp=sdf.format(new Date());
+           String filepath=CONSTANTS.Screenshots+"//"+PageTest.CurrentTestinExecution+timestamp+"//";
+           String filename="Screenshot_"+timestamp+".png";
+           combined+=filepath+filename;
+           System.out.println(combined);
+           File file= new File(combined);
+           if(!file.exists()) {
+               file.mkdir();
+           }
+           File temp=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+           FileUtils.copyFile(temp,file);
+           logger.log(LogStatus.PASS,"Screenshot taken",logger.addScreenCapture(combined));
+       } catch (Exception e) {
+           logger.log(LogStatus.FAIL,"Exception in taking Screenshots");
+           Assert.fail("Exception in taking Screenshot");
+       }
+       return combined;
    }
 }
 

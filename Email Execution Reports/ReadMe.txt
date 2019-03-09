@@ -1,0 +1,1 @@
+This Folder is meant for storing Email Reports

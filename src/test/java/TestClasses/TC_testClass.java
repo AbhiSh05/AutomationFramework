@@ -22,7 +22,8 @@ public class TC_testClass extends PageTest {
     @Test
     public void First_Test() throws Exception {
         System.out.println("First Test Case");
-        google_home.launchURL("https://www.google.co.in/?gws_rd=ssl");
+        google_home.launch_Google_HomePage("https://www.google.co.in/?gws_rd=ssl");
+
     }
 
 }
