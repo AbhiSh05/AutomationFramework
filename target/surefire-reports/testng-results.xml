@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2019-02-09T10:41:16Z" name="TestAll" finished-at="2019-02-09T10:41:26Z" duration-ms="9582">
+    <groups>
+    </groups>
+    <test started-at="2019-02-09T10:41:16Z" name="Google" finished-at="2019-02-09T10:41:26Z" duration-ms="9582">
+      <class name="TestClasses.TC_testClass">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:TestClasses.TC_testClass@6c40365c]" started-at="2019-02-09T16:11:16Z" name="beforeSuite" finished-at="2019-02-09T16:11:16Z" duration-ms="406" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:TestClasses.TC_testClass@6c40365c]" started-at="2019-02-09T16:11:16Z" name="beforeclass" finished-at="2019-02-09T16:11:16Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclass -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method, java.lang.String)[pri:0, instance:TestClasses.TC_testClass@6c40365c]" started-at="2019-02-09T16:11:16Z" name="beforeMethod" finished-at="2019-02-09T16:11:22Z" duration-ms="5827" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void TestClasses.TC_testClass.First_Test() throws java.lang.Exception]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestClasses.TC_testClass@6c40365c]" started-at="2019-02-09T16:11:22Z" name="beforeMethod" finished-at="2019-02-09T16:11:22Z" duration-ms="47" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="First_Test()[pri:0, instance:TestClasses.TC_testClass@6c40365c]" started-at="2019-02-09T16:11:22Z" name="First_Test" finished-at="2019-02-09T16:11:26Z" duration-ms="3612" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- First_Test -->
+        <test-method is-config="true" signature="afterMethod(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:TestClasses.TC_testClass@6c40365c]" started-at="2019-02-09T16:11:26Z" name="afterMethod" finished-at="2019-02-09T16:11:26Z" duration-ms="92" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void TestClasses.TC_testClass.First_Test() throws java.lang.Exception]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=First_Test status=SUCCESS method=TC_testClass.First_Test()[pri:0, instance:TestClasses.TC_testClass@6c40365c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:TestClasses.TC_testClass@6c40365c]" started-at="2019-02-09T16:11:26Z" name="afterClass" finished-at="2019-02-09T16:11:26Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:TestClasses.TC_testClass@6c40365c]" started-at="2019-02-09T16:11:26Z" name="afterSuite" finished-at="2019-02-09T16:11:26Z" duration-ms="446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- TestClasses.TC_testClass -->
+    </test> <!-- Google -->
+  </suite> <!-- TestAll -->
+</testng-results>
